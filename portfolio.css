@@ -1,0 +1,77 @@
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-item {
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 40px); /* 3 sütunlu layout için hesaplama */
+    text-align: center;
+    box-sizing: border-box; /* İçeriklerle birlikte toplam genişlik ve yükseklik hesaplamak için */
+    overflow: hidden; /* İçeriğin kutu sınırları içinde kalmasını sağlar */
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.7s ease; /* Transform özelliği için geçiş tanımla */
+}
+
+.gallery-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Siyah kenar belirginleşir */
+    transform: scale(1.1); /* Büyüme efekti */
+}
+
+.media-content {
+    width: 100%; /* İçeriklerin genişliği 100% olsun */
+    height: 200px; /* İçeriklerin sabit bir yüksekliği olsun (istediğiniz yüksekliği belirleyebilirsiniz) */
+}
+
+iframe {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.caption {
+    padding: 10px; /* Açıklama alanına isteğe bağlı padding eklenebilir */
+}
+
+.date {
+    color: #888;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* Büyüme animasyonu */
+.enlarged {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Şeffaf beyaz arkaplan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.enlarged img {
+    border-radius: 15px;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
