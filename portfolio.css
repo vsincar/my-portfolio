@@ -9,18 +9,19 @@
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: calc(33.33% - 40px); /* 3 sütunlu layout için hesaplama */
+    width: calc(33.33% - 40px);
     text-align: center;
-    box-sizing: border-box; /* İçeriklerle birlikte toplam genişlik ve yükseklik hesaplamak için */
-    overflow: hidden; /* İçeriğin kutu sınırları içinde kalmasını sağlar */
+    box-sizing: border-box;
+    overflow: hidden;
     cursor: pointer;
     position: relative;
-    transition: transform 0.7s ease; /* Transform özelliği için geçiş tanımla */
+    transition: transform 0.7s ease;
 }
 
+
 .gallery-item:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Siyah kenar belirginleşir */
-    transform: scale(1.1); /* Büyüme efekti */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
 }
 
 .media-content {
@@ -52,7 +53,7 @@ iframe {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.7); /* Şeffaf beyaz arkaplan */
+    background: rgba(255, 255, 255, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +61,6 @@ iframe {
     overflow: hidden;
     animation: fadeIn 0.3s ease-in-out;
 }
-
 .enlarged img {
     border-radius: 15px;
     max-width: 90%;
@@ -73,5 +73,16 @@ iframe {
     }
     to {
         opacity: 1;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .gallery-item {
+        width: calc(50% - 40px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .gallery-item {
+        width: calc(100% - 40px);
     }
 }
