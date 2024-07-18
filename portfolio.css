@@ -26,7 +26,7 @@
 
 .media-content {
     width: 100%; /* İçeriklerin genişliği 100% olsun */
-    height: 200px; /* İçeriklerin sabit bir yüksekliği olsun (istediğiniz yüksekliği belirleyebilirsiniz) */
+    height: 350px; /* İçeriklerin sabit bir yüksekliği olsun (istediğiniz yüksekliği belirleyebilirsiniz) */
 }
 
 iframe {
@@ -43,6 +43,13 @@ iframe {
     color: #888;
     font-size: 12px;
     margin-top: 10px;
+}
+.cntr{
+        display: block; /* Linki bir blok öğe olarak görüntüler */
+        text-align: center; /* Metni ve ikonu ortalar */
+        width: fit-content; /* Linkin içeriğine göre genişliğini ayarlar */
+        margin: 0 auto; /* Dikey hizalamayı sağlar */
+      
 }
 
 /* Büyüme animasyonu */
