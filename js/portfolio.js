@@ -1,14 +1,22 @@
 function enlarge(element) {
-    var mediaContent = element.querySelector('.media-content');
-    var imgSrc = mediaContent.src;
-    
-    // Sadece resim içeren kutular için büyütme işlemi yap
-    if (mediaContent.tagName === 'IMG') {
-        document.getElementById('enlargedImg').src = imgSrc;
-        document.getElementById('enlargedContainer').style.visibility = 'visible';
-    }
+  // Görseli büyüt
+  var enlargedContainer = document.getElementById("enlargedContainer");
+  var enlargedImg = document.getElementById("enlargedImg");
+
+  // Görseli genişletmek için kaynağı ayarla
+  enlargedImg.src = element.src;
+
+  // Büyütülmüş konteyneri görünür yap
+  enlargedContainer.style.visibility = "visible";
 }
 
 function shrink() {
-    document.getElementById('enlargedContainer').style.visibility = 'hidden';
+  // Görseli küçült
+  var enlargedContainer = document.getElementById("enlargedContainer");
+
+  // Büyütülmüş konteyneri gizle
+  enlargedContainer.style.visibility = "hidden";
 }
+
+// Görsel büyütme işlevini çağırmak için kullanıcının tıklamasını dinle
+document.getElementById("enlargedContainer").addEventListener("click", shrink);

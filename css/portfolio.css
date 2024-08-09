@@ -1,75 +1,80 @@
-
-.gallery-item {
+/* Base styles */
+.row {
+  margin: 10px 0;
 }
 
-
-.gallery-item:hover {
-    box-shadow: 0 0 10px rgba(0, 153, 255, 0.5);
-    transform: scale(1.0);
+.item {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure content does not overflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Distribute space between items */
 }
 
-.media-content {
-    width: 100%; 
+.item img {
+  height: 200px;
+  aspect-ratio: 3/2;
+  border-radius: 5px;
+  object-fit: cover; /* Ensure image covers its box */
+}
+
+.media_content {
+  cursor: pointer;
+}
+
+.item .info {
+  margin: 10px 0;
+}
+
+.item .date {
+  color: #888;
+  font-size: 0.9rem;
 }
 
 iframe {
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    
+  border-radius: 10px;
 }
 
-.date {
-    color: #888;
-    font-size: 12px;
-    margin-top: 10px;
-}
-.cntr{
-        display: block; /* Linki bir blok öğe olarak görüntüler */
-        text-align: center; /* Metni ve ikonu ortalar */
-        width: fit-content; /* Linkin içeriğine göre genişliğini ayarlar */
-        margin: 0 auto; /* Dikey hizalamayı sağlar */
-      
+.cntr {
+  display: block;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
 }
 
-/* Büyüme animasyonu */
+/* Enlarged view styles */
 .enlarged {
-    visibility: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    overflow: hidden;
-    animation: fadeIn 0.3s ease-in-out;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
 }
+
 .enlarged img {
-    border-radius: 15px;
-    max-width: 90%;
-    max-height: 90%;
+  border-radius: 15px;
+  max-width: 90%;
+  max-height: 90%;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-@media only screen and (max-width: 768px) {
-    .gallery-item {
-        width: calc(50% - 40px);
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .gallery-item {
-        width: calc(100% - 40px);
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
