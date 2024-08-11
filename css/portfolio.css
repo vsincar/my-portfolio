@@ -7,8 +7,8 @@
   padding: 10px;
   border-radius: 5px;
   text-align: center;
-  background-color: white;
-  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+  background-color: var(--item-card-bg);
+  box-shadow: 0 13px 8px -10px var(--box-shadow-card-blog);
   overflow: hidden; /* Ensure content does not overflow */
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
 }
 
 .item .date {
-  color: #888;
+  color: var(--muted-text);
   font-size: 0.9rem;
 }
 
@@ -55,7 +55,8 @@ iframe {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--enlarged-bg);
+  transition: var(--default-transition);
   display: flex;
   justify-content: center;
   align-items: center;
