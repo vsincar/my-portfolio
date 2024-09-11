@@ -1,4 +1,16 @@
-/* Base styles */
+.skill-lang-cap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skill-lang {
+  margin-left: 0;
+  font-size: 1.2rem;
+}
+.pull-right {
+  margin-right: 0;
+  font-size: 0.7rem;
+}
 #designer {
   color: white;
 }
