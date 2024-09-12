@@ -35,6 +35,10 @@
   .info {
     color: var(--item-card-bg);
   }
+  .media_content {
+    border: 2px solid var(--item-card-bg);
+    border-radius: 5px;
+  }
 }
 
 .item img {
@@ -46,6 +50,8 @@
 
 .media_content {
   cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
 }
 
 .item .info {
@@ -93,14 +99,12 @@ iframe {
 }
 .slideshow {
   position: relative;
-  width: 300px;
   height: 200px;
+  aspect-ratio: 3/2;
 }
 
 .slideshow img {
   position: absolute;
-
-  height: 200px;
   top: 0;
   left: 0;
   opacity: 0;
