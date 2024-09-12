@@ -339,22 +339,6 @@ a:hover {
   margin-right: 10px;
 }
 
-/*------/ Ico Circle /------*/
-
-.ico-circle {
-  height: 100px;
-  width: 100px;
-  font-size: 2rem;
-  border-radius: 50%;
-  line-height: 1.55;
-  margin: 0 auto;
-  text-align: center;
-  box-shadow: 0 0 0 10px var(--black-color);
-  display: block;
-}
-
-/*--/ Scrolltop s /--*/
-
 .scrolltop-mf {
   position: relative;
   display: none;
@@ -752,7 +736,19 @@ a:hover {
   align-items: center;
   transition: all 0.3s ease;
 }
+/*------/ Ico Circle /------*/
 
+.ico-circle {
+  height: 100px;
+  width: 100px;
+  font-size: 2rem;
+  border-radius: 50%;
+  line-height: 1.55;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 0 10px var(--black-color);
+  display: block;
+}
 .service-box:hover .ico-circle {
   transition: all 500ms ease;
   color: var(--item-icon-hover);
@@ -761,6 +757,7 @@ a:hover {
 }
 
 .service-box .service-ico {
+  font-size: 9pt;
   margin-bottom: 1rem;
   color: var(--item-icon);
 }
@@ -786,9 +783,12 @@ a:hover {
   .service-box {
     padding: 1.2rem 1rem;
   }
-
+  .ico-circle {
+    width: 50px;
+    height: 50px;
+  }
   .service-box .ico-circle {
-    font-size: 3.5rem;
+    font-size: 2rem;
   }
 
   .service-box .s-title {
@@ -804,7 +804,10 @@ a:hover {
   .service-box {
     padding: 1rem 0.8rem;
   }
-
+  .ico-circle {
+    width: 40px;
+    height: 40px;
+  }
   .service-box .ico-circle {
     display: flex;
     justify-content: center;
