@@ -30,6 +30,12 @@
   align-items: center;
   justify-content: space-between; /* Distribute space between items */
 }
+.item:hover {
+  background-color: var(--navbar-reduced-bg);
+  .info {
+    color: var(--item-card-bg);
+  }
+}
 
 .item img {
   height: 200px;
