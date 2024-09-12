@@ -746,9 +746,13 @@ a:hover {
 
 .service-box {
   background-color: var(--item-card-bg);
-  padding: 2.5rem 1.3rem;
+  padding: 1.5rem 1.2rem;
   border-radius: 1rem;
   margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .service-box:hover .ico-circle {
@@ -777,31 +781,43 @@ a:hover {
 
 .service-box .s-description {
   color: var(--item-text);
-}
-
-/*======================================
-  //--//-->   COUNTER
-  ======================================*/
-
-.counter-box {
-  color: var(--white-bg);
   text-align: center;
 }
 
-.counter-ico {
-  margin-bottom: 1rem;
+@media (max-width: 768px) {
+  .service-box {
+    padding: 1.2rem 1rem;
+  }
+
+  .service-box .ico-circle {
+    font-size: 3.5rem;
+  }
+
+  .service-box .s-title {
+    font-size: 1.2rem;
+  }
+
+  .service-box .s-description {
+    font-size: 0.9rem;
+  }
 }
 
-.counter-ico .ico-circle {
-  height: 60px;
-  width: 60px;
-  line-height: 1.8;
-  box-shadow: 0 0 0 10px var(--box-shadow-color);
-}
+@media (max-width: 576px) {
+  .service-box {
+    padding: 1rem 0.8rem;
+  }
 
-.counter-num .counter {
-  font-size: 2rem;
-  margin-bottom: 0;
+  .service-box .ico-circle {
+    font-size: 3rem;
+  }
+
+  .service-box .s-title {
+    font-size: 1.1rem;
+  }
+
+  .service-box .s-description {
+    font-size: 0.8rem;
+  }
 }
 
 /*======================================
@@ -858,103 +874,6 @@ a:hover {
 
 .w-title {
   font-size: 15px;
-}
-
-/*======================================
-  //--//-->   TESTIMONIALS
-  ======================================*/
-
-.testimonials .owl-carousel .owl-item img {
-  width: auto;
-}
-
-.testimonial-box {
-  color: var(--white-bg);
-  text-align: center;
-}
-
-.testimonial-box .author-test {
-  margin-top: 1rem;
-}
-
-.testimonial-box .author-test img {
-  margin: 0 auto;
-}
-
-.testimonial-box .author {
-  color: var(--white-bg);
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 1rem 0;
-  display: block;
-  font-size: 1.4rem;
-}
-
-.testimonial-box .comit {
-  font-size: 2rem;
-  color: var(--black-color);
-  background-color: var(--white-bg);
-  width: 52px;
-  height: 52px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 50%;
-  line-height: 1.6;
-}
-
-/*======================================
-  //--//-->   BLOG
-  ======================================*/
-
-.card-blog .card-body {
-  position: relative;
-}
-
-.card-blog .card-category-box {
-  position: absolute;
-  text-align: center;
-  top: -16px;
-  left: 15px;
-  right: 15px;
-  line-height: 25px;
-  overflow: hidden;
-}
-
-.card-blog .card-category {
-  display: inline-block;
-  color: var(--white-bg);
-  padding: 0 15px 5px;
-  overflow: hidden;
-  background-color: var(--black-color);
-  border-radius: 4px;
-}
-
-.card-blog .card-category .category {
-  color: var(--white-bg);
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 0.1px;
-  margin-bottom: 0;
-}
-
-.card-blog .card-title {
-  font-size: 1.3rem;
-  margin-top: 0.6rem;
-}
-
-.card-blog .card-description {
-  color: var(--text-color);
-}
-
-.card-blog .post-author {
-  display: inline-block;
-}
-
-.card-blog .post-date {
-  color: var(--text-color);
-  display: inline-block;
-  float: right;
 }
 
 /*======================================
@@ -1145,10 +1064,6 @@ footer .credits a {
   .box-comments,
   .widget-sidebar {
     padding: 3rem;
-  }
-
-  .blog-wrapper .article-title {
-    font-size: 1.9rem;
   }
 
   .box-comments .list-comments .comment-author {

@@ -38,6 +38,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/newstyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/hover-tooltip.css">
   <link rel="stylesheet" href="css/portfolio.css">
 </head>
 
@@ -126,59 +127,111 @@
                 </div>
                 <div class="skill-mf">
                   <p class="title-s">Skills <i class="bi bi-braces"></i></p>
-                  <span>Figma / Adobe XD</span> <span class="pull-right">80%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+                  <div class="skill-col-item" id="1">
+                    <span class="skill-item-name">Figma</span> <span class="pull-right">80%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                   </div>
-                  <span>Adobe Photoshop</span> <span class="pull-right">75%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+                  <div class="skill-col-item" id="2">
+                    <span class="skill-item-name">Adobe XD</span> <span class="pull-right">80%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                   </div>
-                  <span>HTML, CSS</span> <span class="pull-right">90%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+                  <div class="skill-col-item" id="3">
+                    <span class="skill-item-name">Adobe PS</span> <span class="pull-right">75%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="75"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                   </div>
-                  <span>Bootstrap</span> <span class="pull-right">80%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+                  <div class="skill-col-item" id="4">
+                    <span class="skill-item-name">HTML, CSS</span> <span class="pull-right">90%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="90"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                   </div>
-                  <span>Javascript, Angular, Typescript</span> <span class="pull-right">65%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+                  <div class="skill-col-item" id="5">
+                    <span class="skill-item-name">Bootstrap</span> <span class="pull-right">80%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                   </div>
-                  <span>Flutter</span> <span class="pull-right">50%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+                  <div class="skill-col-item" id="6">
+                    <span class="skill-item-name">Javascript</span> <span class="pull-right">65%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="65"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                   </div>
-                  <span>Python</span> <span class="pull-right">40%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+                  <div class="skill-col-item" id="7">
+                    <span class="skill-item-name">React JS</span> <span class="pull-right">50%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                   </div>
 
-                  <p class="title-s mt-4">Languages <i class="bi bi-translate"></i></p>
+                  <div class="skill-col-item" id="8">
+                    <span class="skill-item-name">Tailwind.css</span> <span class="pull-right">40%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="40"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="skill-col-item" id="9">
+                    <span class="skill-item-name">Framer</span> <span class="pull-right">40%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="40"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div id="tooltip" class="skill-tooltip">
+                  </div>
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                      const progressBars = document.querySelectorAll('.progress-bar');
+                      const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                          if (entry.isIntersecting) {
+                            const progressBar = entry.target;
+                            const width = progressBar.getAttribute('aria-valuenow') + '%';
+                            progressBar.style.width = width;
+                            progressBar.style.transition = 'width 1s ease-in-out';
+                            observer.unobserve(progressBar);
+                          }
+                        });
+                      }, { threshold: 0.5 });
+
+                      progressBars.forEach(bar => {
+                        observer.observe(bar);
+                      });
+                    });
+                  </script>
+
+
+                  <p class="title-s" id="skill-languages-caption">Languages <i class="bi bi-translate"></i></p>
                   <div class="skill-lang-cap"><span class="skill-lang">English</span> <span
                       class="pull-right">Intermediate B1</span></div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="100"
-                      aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="60" aria-valuemin="0"
+                      aria-valuemax="100"></div>
                   </div>
                   <div class="skill-lang-cap"><span class="skill-lang">Turkish</span> <span class="pull-right">Advanced
                       C1</span></div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0"
+                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="95" aria-valuemin="0"
                       aria-valuemax="100"></div>
                   </div>
                   <div class="skill-lang-cap"><span class="skill-lang">Kurdish</span> <span
                       class="pull-right">Intermediate B1</span></div>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0"
                       aria-valuemax="100"></div>
                   </div>
                 </div>
@@ -519,7 +572,8 @@
   <script src="contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-
+  <script src="js/page_load_anim.js"></script>
+  <script src="js/hover-tooltip.js"></script>
   <script src="js/main.js"></script>
   <script src="js/portfolio.js"></script>
 </body>
