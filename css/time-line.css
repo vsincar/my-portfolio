@@ -1,5 +1,6 @@
 /* ================ The Timeline ================ */
-
+:root {
+}
 .timeline-container {
   margin: 0;
   padding: 0;
@@ -294,8 +295,8 @@
 
 .sub-title {
   font-size: 1.1em;
-  color: var(--muted-text);
-  font-weight: 500;
+  color: var(--sub-text-color);
+  font-weight: 700;
   border-radius: 10px;
   margin-bottom: 0.2rem;
   display: block;
