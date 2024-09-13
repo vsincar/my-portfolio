@@ -1,0 +1,432 @@
+/* ================ The Timeline ================ */
+
+.timeline-container {
+  margin: 0;
+  padding: 0;
+  background: var(--heading-color);
+
+  color: var(--navbar-reduced-bg);
+  font-family: "Open Sans", sans-serif;
+  font-size: 112.5%;
+  line-height: 1.6em;
+}
+
+.pseudo-circle {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+.ball {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.ball-origin {
+  position: relative;
+  display: inline;
+  padding: 8px 10px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.pseudo-circle .ball-before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  bottom: 0;
+  background-color: white;
+  z-index: -1;
+  border-radius: 40px;
+}
+
+.pseudo-circle .ball-before {
+  position: absolute;
+  margin-left: -0.05rem;
+  top: 2.6rem;
+  content: " ";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: rgb(66, 255, 8);
+  margin-top: -10px;
+  border-radius: 20px;
+  border: 3px solid white;
+  z-index: 12;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 10px rgba(66, 255, 8, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(66, 255, 8, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 5px rgba(66, 255, 8, 0.2);
+  }
+
+  50% {
+    background-color: rgba(66, 255, 8, 1);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 20px rgba(66, 255, 8, 0.8);
+  }
+
+  100% {
+    background-color: rgba(66, 255, 8, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 5px rgba(66, 255, 8, 0.2);
+  }
+}
+.timeline {
+  position: relative;
+  width: 660px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 1em 0;
+  list-style-type: none;
+}
+
+.timeline:before {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  content: " ";
+  display: block;
+  width: 6px;
+  height: 100%;
+  margin-left: -3px;
+  background: rgb(80, 80, 80);
+  background: -moz-linear-gradient(
+    top,
+    rgba(80, 80, 80, 0) 0%,
+    rgb(80, 80, 80) 8%,
+    rgb(80, 80, 80) 92%,
+    rgba(80, 80, 80, 0) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgb(0, 0, 0)),
+    color-stop(100%, rgb(3, 3, 3))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(80, 80, 80, 0) 0%,
+    rgb(80, 80, 80) 8%,
+    rgb(80, 80, 80) 92%,
+    rgba(80, 80, 80, 0) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(80, 80, 80, 0) 0%,
+    rgb(80, 80, 80) 8%,
+    rgb(80, 80, 80) 92%,
+    rgba(80, 80, 80, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(80, 80, 80, 0) 0%,
+    rgb(80, 80, 80) 8%,
+    rgb(80, 80, 80) 92%,
+    rgba(80, 80, 80, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    var(--line-color) 0%,
+    rgb(0, 0, 0) 8%,
+    rgb(19, 0, 0) 92%,
+    var(--line-color) 100%
+  );
+
+  z-index: 5;
+}
+
+.timeline li {
+  padding: 1em 0;
+}
+
+.timeline li:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.direction-l {
+  position: relative;
+  width: 300px;
+  float: left;
+  text-align: right;
+}
+
+.direction-r {
+  position: relative;
+  width: 300px;
+  float: right;
+}
+
+.flag-wrapper {
+  position: relative;
+  display: inline-block;
+
+  text-align: center;
+}
+
+.flag {
+  position: relative;
+  display: inline;
+  background: var;
+  padding: 6px 10px;
+  border-radius: 5px;
+
+  font-weight: 600;
+  text-align: left;
+}
+
+.direction-l .flag {
+  -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.direction-r .flag {
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.direction-l .flag:before,
+.direction-r .flag:before {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  content: " ";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-top: -10px;
+  background: var(--heading-color);
+  border-radius: 10px;
+  border: 4px solid var(--white-color);
+  z-index: 10;
+}
+
+.direction-l .flag:before {
+  right: -40px;
+}
+
+.direction-r .flag:before {
+  left: -40px;
+}
+
+.direction-l .flag:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-left-color: var(--white-color);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.direction-r .flag:after {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-right-color: var(--white-bg);
+
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.time-wrapper {
+  display: inline;
+
+  line-height: 1em;
+  font-size: 0.66666em;
+  color: var(--black-color);
+  vertical-align: middle;
+}
+
+.direction-l .time-wrapper {
+  float: left;
+}
+
+.direction-r .time-wrapper {
+  float: right;
+}
+
+.time {
+  display: inline-block;
+  background-color: var(--muted-text);
+  padding: 9px 8px;
+}
+
+.desc {
+  margin: 1em 0.75em 0 0;
+
+  font-size: 0.77777em;
+  font-style: italic;
+  line-height: 1.5em;
+}
+
+.direction-r .desc {
+  margin: 1em 0 0 0.75em;
+}
+
+/* ================ Timeline Media Queries ================ */
+
+@media screen and (max-width: 660px) {
+  .timeline {
+    width: 100%;
+    padding: 4em 0 1em 0;
+  }
+
+  .timeline li {
+    padding: 2em 0;
+  }
+
+  .direction-l,
+  .direction-r {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .pseudo-circle {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .flag-wrapper {
+    text-align: center;
+  }
+
+  .flag {
+    background: var(--white-bg);
+    z-index: 15;
+  }
+
+  .direction-l .flag:before,
+  .direction-r .flag:before {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    content: " ";
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-left: -10px;
+    background: var(--white-bg);
+    border-radius: 10px;
+    border: 4px solid var(--white-bg);
+    z-index: 10;
+  }
+
+  .pseudo-circle .ball-before {
+    position: absolute;
+    top: 8rem;
+
+    left: 50%;
+    content: " ";
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin-left: -1.1rem;
+    border-radius: 10px;
+    border: 4px solid var(--white-bg);
+    z-index: 30;
+  }
+
+  .ball {
+    position: absolute;
+    top: -2.8rem;
+    z-index: 40;
+  }
+  .ball-after {
+    position: absolute;
+    right: 0.1rem;
+    top: 2.2rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 20px;
+    bottom: 0;
+    background-color: var(--white-bg);
+    z-index: -39;
+  }
+
+  .direction-l .flag:after,
+  .direction-r .flag:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -8px;
+    height: 0;
+    width: 0;
+    margin-left: -8px;
+    border: solid transparent;
+    border-bottom-color: var(--white-bg);
+    border-width: 8px;
+    pointer-events: none;
+  }
+
+  .time-wrapper {
+    display: block;
+    position: relative;
+    margin: 4px 0 0 0;
+    z-index: 14;
+  }
+
+  .direction-l .time-wrapper {
+    float: none;
+  }
+
+  .direction-r .time-wrapper {
+    float: none;
+  }
+
+  .desc {
+    position: relative;
+    margin: 1em 0 0 0;
+    padding: 1em;
+    background: var(--skill-mf-prograss-bg);
+    -webkit-box-shadow: 0 0 1px var(--box-shadow-full-second);
+    -moz-box-shadow: 0 0 1px var(--box-shadow-full-second);
+    box-shadow: 0 0 1px var(--box-shadow-full-second);
+
+    z-index: 15;
+  }
+
+  .direction-l .desc,
+  .direction-r .desc {
+    position: relative;
+    margin: 1em 1em 0 1em;
+    padding: 1em;
+
+    z-index: 15;
+  }
+}
+
+@media screen and (min-width: 400px ?? max-width: 660px) {
+  .direction-l .desc,
+  .direction-r .desc {
+    margin: 1em 4em 0 4em;
+  }
+}

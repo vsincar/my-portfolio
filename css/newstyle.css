@@ -1,4 +1,9 @@
 :root[data-theme="light"] {
+  --gray-color: #bebebe;
+  --white-color: #fff;
+  --line-color-trans: rgba(0, 0, 0, 0);
+  --line-color: rgba(0, 0, 0, 1);
+
   --bg-color: #f5f5f5;
 
   --text-color: #3c3a47;
@@ -44,6 +49,10 @@
   --icon-moon: #b1b0b5;
 }
 :root[data-theme="dark"] {
+  --white-color: #fff;
+  --line-color-trans: rgba(255, 255, 255, 0);
+  --line-color: rgb(255, 255, 255);
+
   --bg-color: #000;
   --text-color: #f5f5f6;
   --navbar-reduced-bg: #fff;

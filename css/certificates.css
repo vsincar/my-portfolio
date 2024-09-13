@@ -21,6 +21,9 @@
   .info {
     color: var(--item-card-bg);
   }
+  .date {
+    color: var(--muted-text);
+  }
 }
 .cert_item img {
   width: 16rem;
