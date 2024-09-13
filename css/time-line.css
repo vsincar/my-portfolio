@@ -52,7 +52,7 @@
   display: block;
   width: 1.3rem;
   height: 1.3rem;
-  background-color: rgb(5, 219, 5);
+  background-color: rgb(0, 255, 0);
   margin-top: -0.7rem;
   border-radius: 20px;
   z-index: 30;
@@ -62,12 +62,12 @@
 @keyframes pulse {
   0% {
     transform: scale(0.5);
-    box-shadow: 0 0 0 0 rgba(49, 247, 49, 0.7);
+    box-shadow: 0 0 0 0 rgba(9, 255, 9, 0.7);
   }
 
   70% {
-    transform: scale(0.75);
-    box-shadow: 0 0 0 20px rgba(0, 255, 0, 0);
+    transform: scale(0.5);
+    box-shadow: 0 0 0 30px rgba(0, 255, 0, 0);
   }
 
   100% {
