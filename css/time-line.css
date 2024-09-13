@@ -375,9 +375,9 @@
     top: -8px;
     height: 0;
     width: 0;
-    color: black;
-    margin-left: -0.4375rem;
+    margin-left: -8px;
     border: solid transparent;
+    border-bottom-color: rgb(255, 255, 255);
     border-width: 8px;
     pointer-events: none;
   }
