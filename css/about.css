@@ -98,6 +98,27 @@
   cursor: help;
 }
 
+#age::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+#age:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
 @media (min-width: 768px) {
   .about-col-md-4 {
     width: 33.333%;
