@@ -90,12 +90,15 @@
     height: 8rem;
   }
   .cert_info .info {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    text-wrap: nowrap;
   }
   .cert_info .info-title {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    text-wrap: nowrap;
   }
   .cert_info .date {
-    font-size: 0.8rem;
+    margin-top: 2rem;
+    font-size: 0.6rem;
   }
 }
