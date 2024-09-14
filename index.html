@@ -176,8 +176,36 @@
               <p class="about-lead">Hello! I would like to tell you about myself so you can get to know me better.
               </p>
               <p class="about-lead">I'm <span id="age" class="age" data-birthdate="1994-07-10"
-                  title="Born on July 10, 1994">29</span> years old, born
-                in Batman, Turkey, and currently residing in Istanbul. As
+                  data-text="Born on July 10, 1994">29</span> years old, born
+              </p>
+              <style>
+                #age {
+                  position: relative;
+                }
+
+                #age::after {
+                  content: attr(data-text);
+                  position: absolute;
+                  bottom: 100%;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  background-color: #333;
+                  color: #fff;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                  font-size: 14px;
+                  white-space: nowrap;
+                  opacity: 0;
+                  visibility: hidden;
+                  transition: opacity 0.3s, visibility 0.3s;
+                }
+
+                #age:hover::after {
+                  opacity: 1;
+                  visibility: visible;
+                }
+              </style>
+              in Batman, Turkey, and currently residing in Istanbul. As
               </p>
               a graduate of vocational high school with courses in computer programming, I continued my training
               in the programming and design field and continued my passion and curiosity in this area.</p>
