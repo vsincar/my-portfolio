@@ -76,7 +76,7 @@
 
 .about-language-progress {
   background-color: var(--language-progress-bg);
-  height: 100%;
+  height: 0.5rem;
 }
 
 .about-title-left {
