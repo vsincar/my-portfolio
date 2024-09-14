@@ -78,6 +78,12 @@
   line-height: 1.6;
   margin-bottom: 1rem;
 }
+#age {
+  text-decoration: underline dotted;
+  text-underline-offset: 5px;
+  position: relative;
+  cursor: help;
+}
 
 @media (min-width: 768px) {
   .about-col-md-4 {
