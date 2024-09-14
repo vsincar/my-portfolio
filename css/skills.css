@@ -1,0 +1,247 @@
+/*======================================
+  //--//-->   skills
+  ======================================*/
+:root[data-theme="dark"] {
+  --skill-tooltip-background-color: rgba(0, 0, 0, 0.9);
+  --skill-tooltip-text-color: #fff;
+}
+
+:root[data-theme="light"] {
+  --skill-tooltip-background-color: rgba(255, 255, 255, 0.9);
+  --skill-tooltip-text-color: #000;
+}
+
+.skill-tooltip {
+  position: fixed;
+  display: none;
+  background-color: var(--skill-tooltip-background-color);
+  color: var(--skill-tooltip-text-color);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  pointer-events: none;
+  max-width: 200px;
+  transform: translate(-50%, -100%);
+  height: auto;
+}
+
+.tooltip-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tooltip-icon {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 5px;
+}
+
+.tooltip-title {
+  color: var(--skill-tooltip-text-color);
+  margin: 0 0 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.tooltip-description {
+  margin: 0 0 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.skill-level-label {
+  margin-bottom: 0.5rem;
+}
+
+.tooltip-progress {
+  position: relative;
+  width: 100%;
+}
+
+.progress-bar {
+  height: 1rem;
+  background-color: #d1d1d1;
+  border-radius: 3px;
+  border: none;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 1rem;
+  background-color: #35bfff;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shine 1.5s infinite;
+  transform: rotate(30deg);
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+.skill-level {
+  right: 5rem;
+  top: 0;
+  position: absolute;
+  color: black;
+  font-size: 10px;
+  text-align: right;
+}
+
+.app-scroller-item {
+  position: relative;
+}
+
+.scroller-item {
+  background-color: var(--item-card-bg);
+
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+/*------/ Ico Circle /------*/
+
+.scroller-icon {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 0 0.4rem var(--black-color);
+}
+.scroller-item:hover .scroller-icon {
+  transition: all 500ms ease;
+  color: var(--item-icon-hover);
+  background-color: var(--black-color);
+  box-shadow: 0 0 0 10px var(--box-shadow-color);
+}
+
+.scroller-item .scroller-icon-box {
+  margin-bottom: 0.625rem;
+  color: var(--item-icon);
+  fill: var(--item-icon);
+}
+
+.scroller-item .scroller-icon {
+  transition: all 500ms ease;
+  font-size: 2.5rem;
+}
+.scroller-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.scroller-item .scroller-title {
+  font-size: 1rem;
+  text-wrap: nowrap;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.scroller-item .scroller-description {
+  color: var(--item-text);
+  text-align: center;
+}
+
+/* Styles for the tag list */
+.tag-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+
+  /* Removes default list styling */
+}
+
+/* Styles for individual list items */
+.tag-list li {
+  padding: 1rem;
+  width: 10rem;
+  border-radius: 0.5rem;
+
+  /* Adds a shadow effect using the custom color */
+}
+
+/* Hover effect for scroller items */
+.scroller .scroller-item:hover {
+  cursor: pointer;
+  /* Changes cursor to pointer on hover */
+}
+
+/* Styles for the inner scroller container */
+.scroller_inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* Adds space between flex items */
+}
+
+/* Styles for the scroller when animation is enabled */
+.scroller[data-animated="true"] {
+  overflow: hidden;
+
+  /* Adds a gradient mask effect */
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 8%,
+    white 92%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+/* Styles for the inner scroller when animation is enabled */
+.scroller[data-animated="true"] .scroller_inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 20s)
+    var(--_animation-direction, forwards) linear infinite;
+  /* Applies the scroll animation */
+}
+.scroller[data-animated="true"]:has(.scroller-item:hover) .scroller_inner {
+  animation-play-state: paused;
+  /* Pauses the animation when hovering over any item */
+}
+
+/* Keyframes for the scroll animation */
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+    /* Moves the content to create a scrolling effect */
+  }
+}

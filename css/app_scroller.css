@@ -1,0 +1,67 @@
+.app-scroller-item {
+  position: relative;
+  padding: 1rem;
+  background-color: var(--item-card-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scroller-app-icon {
+  display: flex;
+  justify-content: center;
+}
+.scroller-app-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.app-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+.app-list li {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.app_scroller-inner {
+  padding-block: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.app-scroller[data-animated="true"] {
+  overflow: hidden;
+
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 8%,
+    white 92%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+/* Styles for the inner scroller when animation is enabled */
+.app-scroller[data-animated="true"] .app_scroller-inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll 20s var(--_animation-direction, forwards) linear infinite;
+  /* Applies the scroll animation */
+}
+.app-scroller[data-animated="true"]:has(.app-scroller-item:hover)
+  .app_scroller-inner {
+  animation-play-state: paused;
+  /* Pauses the animation when hovering over any item */
+}
+.app-scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+/* Keyframes for the scroll animation */
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+    /* Moves the content to create a scrolling effect */
+  }
+}

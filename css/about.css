@@ -1,0 +1,100 @@
+.about-section {
+  background-color: var(--white-bg);
+  padding: 4rem 0;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.about-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.about-col {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.about-box-shadow-full {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.about-personal-info,
+.about-languages-section,
+.about-me {
+  margin-bottom: 2rem;
+}
+
+.about-title-s {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.about-list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-language-item {
+  margin-bottom: 0.5rem;
+}
+
+.about-language-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.about-language-bar {
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  height: 0.5rem;
+  overflow: hidden;
+}
+
+.about-language-progress {
+  background-color: #000000;
+  height: 100%;
+}
+
+.about-title-left {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.about-lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .about-col-md-4 {
+    width: 33.333%;
+  }
+
+  .about-col-md-8 {
+    width: 66.667%;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section {
+    padding: 2rem 0;
+  }
+
+  .about-box-shadow-full {
+    padding: 1.5rem;
+  }
+}

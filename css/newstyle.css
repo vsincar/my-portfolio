@@ -307,22 +307,20 @@ a:hover {
 
 .socials ul li {
   display: inline-block;
+  margin-right: 10px;
 }
 
 .socials .ico-circle {
-  height: 40px;
-  width: 40px;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  margin: 0 15px 0 0;
-  box-shadow: 0 0 0 3px var(--black-color);
+  height: 30px;
+  width: 30px;
+  font-size: 2rem;
+
   transition: all 500ms ease;
 }
 
 .socials .ico-circle:hover {
-  background-color: var(--black-color);
-  color: var(--white-bg);
-  box-shadow: 0 0 0 3px var(--box-shadow-color);
+  color: var(--gray-color);
+  transform: scale(1.1);
   transition: all 500ms ease;
 }
 
@@ -730,108 +728,6 @@ a:hover {
 .skill-mf .progress .progress-bar {
   height: 0.7rem;
   background-color: var(--black-color);
-}
-
-/*======================================
-  //--//-->   SERVICES
-  ======================================*/
-
-.service-box {
-  background-color: var(--item-card-bg);
-  padding: 1.5rem 1.2rem;
-  border-radius: 1rem;
-  margin-bottom: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-/*------/ Ico Circle /------*/
-
-.ico-circle {
-  height: 100px;
-  width: 100px;
-  font-size: 2rem;
-  border-radius: 50%;
-  line-height: 1.55;
-  margin: 0 auto;
-  text-align: center;
-  box-shadow: 0 0 0 10px var(--black-color);
-  display: block;
-}
-.service-box:hover .ico-circle {
-  transition: all 500ms ease;
-  color: var(--item-icon-hover);
-  background-color: var(--black-color);
-  box-shadow: 0 0 0 10px var(--box-shadow-color);
-}
-
-.service-box .service-ico {
-  font-size: 9pt;
-  margin-bottom: 1rem;
-  color: var(--item-icon);
-}
-
-.service-box .ico-circle {
-  transition: all 500ms ease;
-  font-size: 4rem;
-}
-
-.service-box .s-title {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 0.4rem 0;
-}
-
-.service-box .s-description {
-  color: var(--item-text);
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .service-box {
-    padding: 1.2rem 1rem;
-  }
-  .ico-circle {
-    width: 50px;
-    height: 50px;
-  }
-  .service-box .ico-circle {
-    font-size: 2rem;
-  }
-
-  .service-box .s-title {
-    font-size: 1.2rem;
-  }
-
-  .service-box .s-description {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .service-box {
-    padding: 1rem 0.8rem;
-  }
-  .ico-circle {
-    width: 40px;
-    height: 40px;
-  }
-  .service-box .ico-circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-  }
-
-  .service-box .s-title {
-    font-size: 1.1rem;
-  }
-
-  .service-box .s-description {
-    font-size: 0.8rem;
-  }
 }
 
 /*======================================
