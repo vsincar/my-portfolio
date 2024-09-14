@@ -169,6 +169,7 @@
 }
 
 .scroller-item .scroller-title {
+  user-select: none;
   font-size: 1rem;
   text-wrap: nowrap;
   text-transform: uppercase;
