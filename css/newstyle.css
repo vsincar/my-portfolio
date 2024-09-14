@@ -5,6 +5,7 @@
   --line-color: rgba(0, 0, 0, 1);
   --sub-text-color: #444;
 
+--btn-bg-color:#444;
   --bg-color: #f5f5f5;
 
 --language-progress-bg: #000;
@@ -55,6 +56,8 @@
   --white-color: #fff;
   --line-color-trans: rgba(255, 255, 255, 0);
   --line-color: rgb(255, 255, 255);
+
+  --btn-bg-color:#fff;
 
   --bg-color: #000;
   --language-progress-bg: #333;
