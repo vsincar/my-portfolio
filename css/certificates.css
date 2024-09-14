@@ -30,7 +30,7 @@
   }
 }
 .cert_item img {
-  width: 16rem;
+  width: 18rem;
   height: 12rem;
 }
 .cert_info {
@@ -71,8 +71,8 @@
 }
 @media (max-width: 768px) {
   .cert_item img {
-    width: 12rem;
-    height: 10rem;
+    width: 14rem;
+    height: 9rem;
   }
   .cert_info .info {
     font-size: 1.1rem;
@@ -87,7 +87,7 @@
 @media (max-width: 480px) {
   .cert_item img {
     width: 10rem;
-    height: 8rem;
+    height: 6rem;
   }
   .cert_info .info {
     font-size: 0.8rem;
