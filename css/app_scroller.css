@@ -47,7 +47,8 @@
 .app-scroller[data-animated="true"] .app_scroller-inner {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll 20s var(--_animation-direction, forwards) linear infinite;
+  animation: scroll 12s var(--_animation-direction, forwards) linear infinite;
+  animation-delay: -8s;
   /* Applies the scroll animation */
 }
 .app-scroller[data-animated="true"]:has(.app-scroller-item:hover)
