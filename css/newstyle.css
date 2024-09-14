@@ -700,95 +700,6 @@ a:hover {
 }
 
 /*======================================
-  //--//-->   ABOUT
-  ======================================*/
-
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
-.skill-mf span {
-  color: var(--text-color);
-}
-
-.skill-mf .progress {
-  background-color: var(--skill-mf-prograss-bg);
-  margin: 0.5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: 0.7rem;
-}
-
-.skill-mf .progress .progress-bar {
-  height: 0.7rem;
-  background-color: var(--black-color);
-}
-
-/*======================================
-  //--//-->   PORTFOLIO
-  ======================================*/
-
-.work-box {
-  margin-bottom: 3rem;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  background-color: var(--white-bg);
-}
-
-.work-box:hover img {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
-}
-
-.work-img {
-  display: block;
-  overflow: hidden;
-}
-
-.work-img img {
-  transition: all 1s;
-}
-
-.work-content {
-  padding: 2rem 3% 1rem 4%;
-}
-
-.work-content .w-more {
-  color: var(--text-color);
-  font-size: 0.8rem;
-}
-
-.work-content .w-more .w-ctegory {
-  color: var(--black-color);
-}
-
-.work-content .w-like {
-  font-size: 2.5rem;
-  color: var(--black-color);
-  float: right;
-}
-
-.work-content .w-like a {
-  color: var(--black-color);
-}
-
-.work-content .w-like .num-like {
-  font-size: 0.7rem;
-}
-
-.w-title {
-  font-size: 15px;
-}
-
-/*======================================
   //--//-->   CONTACT
   ======================================*/
 
@@ -915,7 +826,7 @@ footer .credits a {
   height: 1.2rem;
 }
 #toggle-button {
-  width: 5.1rem;
+  width: 5rem;
 }
 
 @media (min-width: 577px) {
