@@ -1,3 +1,7 @@
+#certificates {
+  margin-top: 13rem;
+}
+
 .cert_container {
   display: flex;
   flex-direction: column;

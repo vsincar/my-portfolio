@@ -1,4 +1,8 @@
 /* Portfolio section */
+#work {
+  margin-top: 10rem;
+}
+
 .skill-lang-cap {
   display: flex;
   justify-content: space-between;

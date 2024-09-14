@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(
-    ".item, .about-personal-info, .about-languages-section, .scroller-item, .app-scroller, .timeline-container, .title-box, .contact-mf, .about-me, .lead, #h2a, .cert_item"
+    ".item, .about-personal-info, .about-languages-section, .scroller, .app-scroller, .timeline-container, .title-box, .contact-mf, .about-me, .lead, #h2a, .cert_item"
   );
 
   const observer = new IntersectionObserver(
@@ -36,7 +36,7 @@ style.textContent = `
     }
   }
 
-  .item, .about-personal-info, .about-languages-section, .scroller-item, .app-scroller, .timeline-container, .title-box, .contact-mf, .about-me, .lead, #h2a, .cert_item {
+  .item, .about-personal-info, .about-languages-section, .scroller, .app-scroller, .timeline-container, .title-box, .contact-mf, .about-me, .lead, #h2a, .cert_item {
     opacity: 0;
     transform: translateY(20px);
   }

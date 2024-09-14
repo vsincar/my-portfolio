@@ -40,9 +40,21 @@
   margin-bottom: 1rem;
 }
 
-.about-list-unstyled {
+.about-info-list {
   list-style: none;
   padding-left: 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.about-socials {
+  margin-left: 0;
+  display: flex;
+}
+.about-socials li {
+  margin-left: auto;
+  display: inline-block;
+  list-style: none;
+  font-size: 2rem;
 }
 
 .about-language-item {
@@ -96,6 +108,11 @@
 }
 
 @media (max-width: 767px) {
+  .about-personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .about-section {
     padding: 2rem 0;
   }

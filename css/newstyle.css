@@ -311,7 +311,9 @@ a:hover {
   display: inline-block;
   margin-right: 10px;
 }
-
+.socials{
+  margin-top: 1rem;
+}
 .socials .ico-circle {
   height: 30px;
   width: 30px;
@@ -343,7 +345,13 @@ a:hover {
 .list-ico {
   line-height: 2;
 }
+.list-ico li{
+  display: flex;
 
+}
+.list-text{
+  margin-left: 0.5rem;
+}
 .list-ico span {
   color: var(--black-color);
   margin-right: 10px;

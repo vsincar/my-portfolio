@@ -1,5 +1,6 @@
 /* ================ The Timeline ================ */
-:root {
+#experience {
+  margin-top: 13rem;
 }
 .timeline-container {
   margin: 0;
