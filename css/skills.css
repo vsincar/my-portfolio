@@ -106,12 +106,14 @@
 }
 
 .skill-level {
-  right: 5rem;
   top: 0;
   position: absolute;
   color: black;
   font-size: 10px;
-  text-align: right;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
 .app-scroller-item {

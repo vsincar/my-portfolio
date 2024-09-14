@@ -63,7 +63,7 @@
 }
 
 .about-language-progress {
-  background-color: #000000;
+  background-color: var(--box-shadow-color);
   height: 100%;
 }
 
