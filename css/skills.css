@@ -23,6 +23,7 @@
   z-index: 1000;
   pointer-events: none;
   max-width: 200px;
+  border: 1px solid var(--line-color);
   transform: translate(-50%, -100%);
   height: auto;
 }
