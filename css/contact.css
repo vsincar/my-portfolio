@@ -65,15 +65,17 @@
 
 .form-control {
   border: none;
-  border-bottom: 2px solid var(--line-color);
+  border-bottom: 2px solid var(--black-color);
   border-radius: 0;
   padding: 0.5rem 0.3rem;
   margin-bottom: 1.5rem;
   transition: border-color 0.3s ease;
-  background-color: var(--input-bg);
+  background-color: var(--input-bg-default);
   color: var(--text-color);
 }
-
+.form-control::placeholder {
+  color: var(--input-placeholder);
+}
 .form-control:focus {
   box-shadow: none;
   border-color: var(--sub-text-color);
