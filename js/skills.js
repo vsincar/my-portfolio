@@ -12,11 +12,17 @@ function addAnimation() {
     const scrollerInner = scroller.querySelector(".scroller_inner");
     const scrollerContent = Array.from(scrollerInner.children);
 
-    scrollerContent.forEach((item) => {
-      const duplicatedItem = item.cloneNode(true);
-      duplicatedItem.setAttribute("aria-hidden", true);
-      scrollerInner.appendChild(duplicatedItem);
-    });
+    const duplicateCount = Math.ceil(
+      window.innerWidth / scrollerInner.scrollWidth
+    );
+
+    for (let i = 0; i < duplicateCount; i++) {
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        scrollerInner.appendChild(duplicatedItem);
+      });
+    }
   });
 
   appScrollers.forEach((appScroller) => {
@@ -24,13 +30,22 @@ function addAnimation() {
     const appScrollerInner = appScroller.querySelector(".app_scroller-inner");
     const appScrollerItem = Array.from(appScrollerInner.children);
 
-    appScrollerItem.forEach((item) => {
-      const duplicatedItem = item.cloneNode(true);
-      duplicatedItem.setAttribute("aria-hidden", true);
-      appScrollerInner.appendChild(duplicatedItem);
-    });
+    const duplicateCount = Math.ceil(
+      window.innerWidth / appScrollerInner.scrollWidth
+    );
+
+    for (let i = 0; i < duplicateCount; i++) {
+      appScrollerItem.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        appScrollerInner.appendChild(duplicatedItem);
+      });
+    }
   });
 }
+
+window.addEventListener("resize", addAnimation);
+
 document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".app-scroller-item");
   const tooltip = document.getElementById("skillTooltip");
