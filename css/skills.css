@@ -7,7 +7,7 @@
 }
 
 :root[data-theme="light"] {
-  --skill-tooltip-background-color: rgb(255, 255, 255);
+  --skill-tooltip-background-color: rgb(255, 255, 255, 0.9);
   --skill-tooltip-text-color: #000;
 }
 #skills {
@@ -125,7 +125,7 @@
 }
 
 .scroller-item {
-  background-color: var(--item-card-bg);
+  background-color: var(--bg-color);
 
   border-radius: 1rem;
   margin-bottom: 3rem;
@@ -152,7 +152,7 @@
   transition: all 500ms ease;
   color: var(--item-icon-hover);
   background-color: var(--black-color);
-  box-shadow: 0 0 0 10px var(--box-shadow-color);
+  box-shadow: 0 0 0 10px var(--bg-color);
 }
 
 .scroller-item .scroller-icon-box {
