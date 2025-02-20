@@ -44,7 +44,33 @@ function addAnimation() {
   });
 }
 
-window.addEventListener("resize", addAnimation);
+window.addEventListener("resize", function () {
+  scrollers.forEach((scroller) => {
+    const scrollerInner = scroller.querySelector(".scroller_inner");
+    const currentCount = scrollerInner.children.length;
+    const duplicateCount = Math.ceil(
+      window.innerWidth / scrollerInner.scrollWidth
+    );
+
+    if (currentCount / scrollerInner.childElementCount < duplicateCount) {
+      scroller.querySelector("[data-animated='true']").remove();
+      addAnimation();
+    }
+  });
+
+  appScrollers.forEach((appScroller) => {
+    const appScrollerInner = appScroller.querySelector(".app_scroller-inner");
+    const currentCount = appScrollerInner.children.length;
+    const duplicateCount = Math.ceil(
+      window.innerWidth / appScrollerInner.scrollWidth
+    );
+
+    if (currentCount / appScrollerInner.childElementCount < duplicateCount) {
+      appScroller.querySelector("[data-animated='true']").remove();
+      addAnimation();
+    }
+  });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".app-scroller-item");
