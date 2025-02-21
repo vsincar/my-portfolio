@@ -119,6 +119,17 @@
   opacity: 1;
   visibility: visible;
 }
+@media (min-width: 1096px) {
+  .socials-bottom {
+    display: flex;
+    justify-content: flex-start; /* veya align-items: flex-start; */
+  }
+  .socials-bottom li {
+    text-align: left;
+    margin-left: 0; /* Bu da solda hizalanmasını sağlayabilir */
+  }
+}
+
 @media (min-width: 768px) {
   .about-col-md-4 {
     width: 33.333%;
