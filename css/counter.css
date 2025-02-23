@@ -1,12 +1,10 @@
 /* Genel Sıfırlamalar */
 
 :root[data-theme="dark"] {
-  --counter-card-bg: #fff;
-  --counter-label-color: #3b3945;
+  --counter-label-color: #fff;
 }
 :root[data-theme="light"] {
-  --counter-card-bg: #3b3945;
-  --counter-label-color: #fff;
+  --counter-label-color: #3b3945;
 }
 
 /* Sayaç Kutularını İçeren Wrapper */
@@ -22,9 +20,7 @@
 /* Bireysel Sayaç Kutuları */
 .counter-box {
   flex: 0 0 120px; /* Kutuların genişliğini sabit tut */
-  height: 100px;
-  background: var(--counter-card-bg);
-  border-radius: 16px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +31,7 @@
 /* Rakamların Stili */
 .number {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--counter-label-color);
 }
 
@@ -44,6 +40,7 @@
   font-size: 1rem;
   color: var(--counter-label-color);
   margin-top: 5px;
+  font-weight: 600;
 }
 
 /* Tablet (768px ve altı) */
