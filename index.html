@@ -124,8 +124,6 @@
   <!-- About Section-->
   <section id="about" class="about-section">
     <div class="about-container">
-
-
       <div class="about-box-shadow-full">
         <div class="about-row">
           <div class="about-col about-col-md-4">
@@ -182,7 +180,6 @@
           </div>
           <div class="about-col about-col-md-8">
             <div class="about-me">
-
               <p class="about-lead">Hello! I would like to tell you about myself so you can get to know me better.
               </p>
               <p class="about-lead">I'm <span id="age" class="age" data-birthdate="1994-07-10"
@@ -510,7 +507,7 @@
           <div class="portfolio-card">
             <img src="img/peakbuy/Screenshot.png" class="img-fluid" alt="PeakBuy E-commerce website">
             <div class="portfolio-info">
-              <h4>PeakBuy E-commerce website</h4>
+              <h4>PeakBuy E-commerce Website UI</h4>
               <p>JavaScript, HTML, CSS</p>
               <div class="portfolio-links">
                 <a href="https://vsincar.github.io/peak-buy" target="_blank" title="View Project"><i
@@ -532,7 +529,7 @@
               <img src="img/hadatha/Careers.png" class="img-fluid" alt="Hadatha project image 5">
             </div>
             <div class="portfolio-info">
-              <h4>Hadatha - Job search web project</h4>
+              <h4>Hadatha - Job Search Web Project - Basic UI</h4>
               <p>Figma</p>
               <div class="portfolio-links">
                 <a href="https://www.figma.com/proto/3i8orrCJ4SIHF2udFpzJZy/Hadatha-Web?node-id=0-1&t=uiplQAAhBhXjpgAF-1"
@@ -552,7 +549,7 @@
               <img src="img/filmofy-web-project/3.png" class="img-fluid" alt="Filmofy project image 3">
             </div>
             <div class="portfolio-info">
-              <h4>Filmofy - Basic movie social media</h4>
+              <h4>Filmofy - Basic Movie Social Media</h4>
               <p>Bootstrap, JavaScript, HTML, CSS</p>
               <div class="portfolio-links">
                 <a href="https://vsincar.github.io/filmofy" target="_blank" title="View Project"><i
@@ -573,7 +570,7 @@
                 allowfullscreen></iframe>
             </div>
             <div class="portfolio-info">
-              <h4>3D video</h4>
+              <h4>3D video modelled and made by me</h4>
               <p>Cinema4D</p>
               <div class="portfolio-links">
                 <a href="https://www.youtube.com/watch?v=0OnZD106FNU" target="_blank" title="Watch Video"><i
@@ -594,7 +591,7 @@
                 allowfullscreen></iframe>
             </div>
             <div class="portfolio-info">
-              <h4>Intro Animations</h4>
+              <h4>Intro Animations - Mixup of old intros of my youtube channel</h4>
               <p>Cinema4D</p>
               <div class="portfolio-links">
                 <a href="https://www.youtube.com/watch?v=MKfJgzklfwQ" target="_blank" title="Watch Video"><i
@@ -625,13 +622,40 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="text-center mt-5 button-anim">
         <a href="https://github.com/vsincar" target="_blank" class="btn btn-primary">See more on my <i
             class="bi bi-github"></i> Github profile</a>
       </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const portfolioItems = document.querySelectorAll('.portfolio-item');
+          const maxInitialItems = 3;
+
+          if (portfolioItems.length > maxInitialItems) {
+            // Fazla öğeleri gizle
+            portfolioItems.forEach((item, index) => {
+              if (index >= maxInitialItems) item.classList.add('hidden-item');
+            });
+
+            // Butonu oluştur
+            const showMoreBtn = document.createElement('button');
+            showMoreBtn.className = 'btn btn-primary mt-3 button-anim';
+            showMoreBtn.textContent = 'Show more';
+
+            // Tıklama olayı
+            showMoreBtn.addEventListener('click', () => {
+              portfolioItems.forEach(item => item.classList.remove('hidden-item'));
+              showMoreBtn.remove();
+            });
+
+            // Butonu yerleştir
+            document.querySelector('.portfolio-container')
+              .insertAdjacentElement('afterend', showMoreBtn);
+          }
+        });
+      </script>
 
   </section>
 

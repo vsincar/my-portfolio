@@ -1,7 +1,9 @@
 #work {
   margin-top: 12rem;
 }
-
+.hidden-item {
+  display: none;
+}
 .portfolio-container {
   display: flex;
   flex-wrap: wrap;

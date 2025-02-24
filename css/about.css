@@ -154,3 +154,28 @@
     padding: 1.5rem;
   }
 }
+@media (max-width: 767px) {
+  /* Sütun sıralaması: Personal Info -> About -> Languages */
+  .about-row {
+    flex-direction: column;
+  }
+
+  .about-col-md-4 {
+    order: 3; /* Tüm içeriği (personal info + languages) en alta taşır */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-col-md-8 {
+    order: 1; /* About bölümünü üste çıkarır */
+  }
+
+  .about-languages-section {
+    order: 2; /* Languages'ı Personal Info'nun altına taşır */
+    margin-top: 2rem;
+  }
+
+  .about-personal-info {
+    order: 1; /* Personal Info'yu üstte tutar */
+  }
+}
