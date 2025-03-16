@@ -70,7 +70,7 @@
   padding: 0.5rem 0.3rem;
   margin-bottom: 1.5rem;
   transition: border-color 0.3s ease;
-  background-color: var(--input-bg-default);
+  background-color: var(--input-bg-contact);
   color: var(--text-color);
 }
 .form-control::placeholder {
