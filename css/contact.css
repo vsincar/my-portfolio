@@ -99,8 +99,8 @@
 
 .floating-label {
   position: absolute;
-  left: 0rem;
-  top: 0.75rem;
+  left: 0.3rem;
+  top: 0rem;
   color: var(--input-placeholder);
   pointer-events: none;
   transition: all 0.2s ease;
