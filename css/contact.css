@@ -143,3 +143,42 @@
   background-color: var(--white-bg);
   color: var(--line-color);
 }
+
+/* Social Icons Tooltip Styles */
+.socials-items {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background-color: var(--line-color);
+  color: var(--white-bg);
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.socials-items:hover .tooltip {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+/* Optional: Add a small arrow to the tooltip */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-color: var(--line-color);
+}
