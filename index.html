@@ -744,15 +744,17 @@
                 <div class="col-md-6">
                   <div class="contact-form">
                     <form id="contact-form" action="https://formspree.io/f/xwpejrap" method="POST">
-                      <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                      <div class="form-wrapper">
+                        <input type="text" name="name" class="form-control" placeholder=" " required>
+                        <label class="floating-label">Your Name</label>
                       </div>
-                      <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                      <div class="form-wrapper">
+                        <input type="email" name="email" class="form-control" placeholder=" " required>
+                        <label class="floating-label">Your E-mail</label>
                       </div>
-                      <div class="form-group">
-                        <textarea name="message" class="form-control" rows="5" placeholder="Your Message"
-                          required></textarea>
+                      <div class="form-wrapper">
+                        <textarea name="message" class="form-control" rows="5" placeholder=" " required></textarea>
+                        <label class="floating-label">Your Message</label>
                       </div>
                       <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
