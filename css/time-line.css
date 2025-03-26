@@ -18,7 +18,7 @@
 
 /* Aktif Kart (İş Arıyor) */
 .experience.active .content {
-  border-bottom: 4px solid #0099ff;
+  border-bottom: 4px solid #00e676;
 }
 
 .content {
@@ -68,7 +68,7 @@
   display: none;
   padding-top: 10px;
   color: var(--text-color);
-  border-top: 1px dashed var(--gray-color);
+  border-top: 1px dashed var(--skill-mf-progress-bg);
   margin-top: 10px;
 }
 
@@ -76,6 +76,20 @@
   margin: 8px 0 0 0;
   line-height: 1.5;
   font-size: 0.95rem;
+}
+
+.experience:nth-child(odd) .content .duration-tooltip {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 10px;
+}
+
+.experience:nth-child(even) .content .duration-tooltip {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
 }
 
 /* Masaüstü İçin Zaman Çizelgesi */
@@ -94,12 +108,13 @@
   .timeline::after {
     content: "";
     position: absolute;
-    width: 3px;
+    width: 5px;
     background-color: var(--black-color);
-    top: 0;
-    bottom: 70px;
+    top: 58px;
+    bottom: 0;
     left: 50%;
-    margin-left: -1.5px;
+    margin-left: -2.5px;
+    z-index: 0;
   }
 
   .experience {
@@ -118,6 +133,10 @@
     left: 50%;
     padding-left: 1.5rem;
     text-align: left;
+  }
+
+  .experience:first-child::after {
+    top: 55px;
   }
 
   .experience::after {
@@ -140,19 +159,19 @@
   }
 
   .experience.active::after {
-    background-color: #0099ff;
-    animation: pulse 1.5s infinite;
+    background-color: #08e600; /* Yeşil tonu */
+    animation: pulseGreen 1.5s infinite;
   }
 
-  @keyframes pulse {
+  @keyframes pulseGreen {
     0% {
-      box-shadow: 0 0 0 0 rgba(118, 182, 255, 0.7);
+      box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); /* 4CAF50'nin %70 opaklığı */
     }
     70% {
-      box-shadow: 0 0 0 10px rgba(145, 213, 245, 0);
+      box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); /* Tamamen şeffaf */
     }
     100% {
-      box-shadow: 0 0 0 0 rgba(176, 229, 253, 0);
+      box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); /* Tamamen şeffaf */
     }
   }
 
@@ -179,26 +198,5 @@
 
   .experience.active .content {
     border-bottom: none;
-  }
-}
-
-/* Mobil için tooltip pozisyonu */
-@media (max-width: 767px) {
-  .content .duration-tooltip {
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    margin-bottom: 10px;
-  }
-
-  .content .duration-tooltip::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: var(--black-color) transparent transparent transparent;
   }
 }
