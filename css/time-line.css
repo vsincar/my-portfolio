@@ -7,7 +7,7 @@
 
 /* Mobil İçin Dikey Kartlar */
 .timeline {
-  max-width: 100%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -19,6 +19,17 @@
 /* Aktif Kart (İş Arıyor) */
 .experience.active .content {
   border-bottom: 4px solid #00e676;
+  box-shadow: 0 0 5px #00e676, 0 0 15px #00e676, 0 0 20px #00e676;
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    box-shadow: 0 0 5px #00e676, 0 0 10px #00e676, 0 0 15px #00e676;
+  }
+  to {
+    box-shadow: 0 0 10px #00e676, 0 0 20px #00e676, 0 0 30px #00e676;
+  }
 }
 
 .content {
