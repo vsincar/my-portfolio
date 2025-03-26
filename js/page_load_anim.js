@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(
-    ".item, .about-personal-info, .button-anim, .portfolio-card, .about-languages-section, .scroller, .app-scroller, .timeline-container, .title-box, .contact-mf, .about-me, .lead, #h2a, .cert_item"
+    ".item, .about-personal-info, .button-anim, .portfolio-card, .about-languages-section, .scroller, .app-scroller, .title-box, .contact-mf, .about-me, .lead, #h2a, .cert_item"
   );
 
   const observer = new IntersectionObserver(

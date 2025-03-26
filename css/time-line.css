@@ -162,6 +162,7 @@
     border-radius: 50%;
     top: 55px;
     z-index: 1;
+    animation: none !important; /* ::after için animasyonu devre dışı bırak */
   }
 
   .experience:nth-child(odd)::after {
@@ -200,4 +201,60 @@
   .experience.active .content {
     border-bottom: none;
   }
+}
+
+/* Animasyon tanımları */
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.experience {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.experience.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Sol item animasyonu (active olmayanlar) */
+.experience.left:not(.active).show > .content {
+  animation: fadeInFromLeft 0.6s ease-out forwards;
+}
+
+/* Sağ item animasyonu (active olmayanlar) */
+.experience.right:not(.active).show > .content {
+  animation: fadeInFromRight 0.6s ease-out forwards;
+}
+
+/* Active olmayanlar için after elementi ayarları */
+.experience:not(.active)::after {
+  opacity: 0;
+}
+
+.experience.active::after,
+.experience.left:not(.active).show::after,
+.experience.right:not(.active).show::after {
+  opacity: 1;
+  transition: opacity 0.6s ease-out 0.3s; /* Gecikmeli görünme */
+  animation: none !important; /* ::after için animasyonu devre dışı bırak */
 }
