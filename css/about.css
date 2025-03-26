@@ -79,6 +79,17 @@
   height: 0.5rem;
 }
 
+.about-language-progress {
+  background-color: var(--language-progress-bg);
+  height: 0.5rem;
+  width: 0;
+  transition: width 1.5s ease-out;
+}
+
+.about-language-progress.animate {
+  width: 100%;
+}
+
 .about-title-left {
   font-size: 1.75rem;
   font-weight: 600;
