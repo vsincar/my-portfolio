@@ -106,7 +106,7 @@
 
   --switch-bg: var(--input-bg);
   --switch-circle-bg: #000;
-  --switch-circle-pos: 2.66rem;
+  --switch-circle-pos: 2rem;
   --icon-sun: var(--muted-text);
   --icon-moon: #dce3ff;
 }
@@ -757,25 +757,25 @@ footer .credits a {
   border-radius: 0.3rem;
 }
 
-/*If you have some default attributes you can add to salt :root{}*/
+/*If you have some default attributes you can add to :root{}*/
 #theme-switcher {
   background-color: var(--switch-bg);
-  border-radius: 50px;
+  border-radius: 37.5px; /* 50px * 0.75 */
   display: flex;
   align-items: center;
-  gap: 1.33rem;
+  gap: 1rem; /* 1.33rem * 0.75 */
   cursor: pointer;
-  padding: 0.66rem;
+  padding: 0.5rem; /* 0.66rem * 0.75 */
   position: relative;
   transition: var(--default-transition);
 }
 #theme-switcher::before {
   content: "";
   position: absolute;
-  width: 2.22rem;
-  height: 2.22rem;
+  width: 1.665rem; /* 2.22rem * 0.75 */
+  height: 1.665rem; /* 2.22rem * 0.75 */
   background-color: var(--switch-circle-bg);
-  border-radius: 50px;
+  border-radius: 37.5px; /* 50px * 0.75 */
   z-index: 0;
   left: 0;
   transform: translateX(var(--switch-circle-pos));
@@ -787,18 +787,18 @@ footer .credits a {
 }
 #icon-sun {
   fill: var(--icon-sun);
-  border-radius: 50px;
-  width: 1.2rem;
-  height: 1.2rem;
+  border-radius: 37.5px; /* 50px * 0.75 */
+  width: 0.9rem; /* 1.2rem * 0.75 */
+  height: 0.9rem; /* 1.2rem * 0.75 */
 }
 #icon-moon {
   fill: var(--icon-moon);
-  border-radius: 50px;
-  width: 1.2rem;
-  height: 1.2rem;
+  border-radius: 37.5px; /* 50px * 0.75 */
+  width: 0.9rem; /* 1.2rem * 0.75 */
+  height: 0.9rem; /* 1.2rem * 0.75 */
 }
 #toggle-button {
-  width: 5rem;
+  width: 3.75rem; /* 5rem * 0.75 */
 }
 
 @media (min-width: 577px) {
