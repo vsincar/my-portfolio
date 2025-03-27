@@ -200,6 +200,7 @@
 }
 .btn-primary:hover {
   background-color: var(--white-bg);
+  border: 2px solid var(--sub-text-color);
   color: var(--black-color);
 }
 /* Responsive Adjustments */
