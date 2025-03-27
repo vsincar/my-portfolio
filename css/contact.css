@@ -85,7 +85,7 @@
 
 .form-control:focus {
   box-shadow: none;
-  border-color: var(--sub-text-color);
+  border-color: var(--black-color);
 }
 
 .form-control:focus::placeholder {
@@ -100,7 +100,7 @@
 .floating-label {
   position: absolute;
   left: 0.3rem;
-  top: 0rem;
+  top: 0.4rem;
   color: var(--input-placeholder);
   pointer-events: none;
   transition: all 0.2s ease;
