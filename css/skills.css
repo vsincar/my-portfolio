@@ -4,11 +4,13 @@
 :root[data-theme="dark"] {
   --skill-tooltip-background-color: rgba(0, 0, 0, 0.9);
   --skill-tooltip-text-color: #fff;
+  --image-filter: invert(1) brightness(2); /* Dark modda beyaza dönüşecek */
 }
 
 :root[data-theme="light"] {
   --skill-tooltip-background-color: rgb(255, 255, 255, 0.9);
   --skill-tooltip-text-color: #000;
+  --image-filter: invert(0); /* Light modda siyah kalacak */
 }
 #skills {
   margin-top: 13rem;
@@ -122,11 +124,10 @@
 
 .app-scroller-item {
   position: relative;
+  background-color: var(--white-bg);
 }
 
 .scroller-item {
-  background-color: var(--bg-color);
-
   border-radius: 1rem;
   margin-bottom: 3rem;
   display: flex;
@@ -136,7 +137,10 @@
   transition: all 0.3s ease;
 }
 /*------/ Ico Circle /------*/
-
+img#frmer {
+  filter: var(--image-filter);
+  transition: filter 0.3s ease-in-out; /* Geçiş efekti */
+}
 .scroller-icon {
   height: 4rem;
   width: 4rem;
@@ -150,8 +154,8 @@
 }
 .scroller-item:hover .scroller-icon {
   transition: all 500ms ease;
-  color: var(--item-icon-hover);
-  background-color: var(--black-color);
+  color: var(--item-icon);
+  fill: var(--item-icon);
   box-shadow: 0 0 0 10px var(--bg-color);
 }
 
