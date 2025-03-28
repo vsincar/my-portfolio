@@ -1,6 +1,18 @@
 const scrollers = document.querySelectorAll(".scroller");
 const appScrollers = document.querySelectorAll(".app-scroller");
 
+// Tema kontrolü için fonksiyon
+function updateImageFilter() {
+  const theme = document.documentElement.getAttribute("data-theme") || "light";
+  const images = document.querySelectorAll("img#frmer");
+
+  images.forEach((img) => {
+    img.style.filter =
+      theme === "dark" ? "invert(1) brightness(2)" : "invert(0)";
+  });
+}
+
+// Animasyon ekleme fonksiyonu (kullanıcı tercihlerine göre)
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   addAnimation();
 }
@@ -44,6 +56,20 @@ function addAnimation() {
   });
 }
 
+// Tema değişikliklerini izle
+const observer = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
+    if (mutation.attributeName === "data-theme") {
+      updateImageFilter();
+    }
+  });
+});
+
+observer.observe(document.documentElement, {
+  attributes: true,
+});
+
+// Pencere boyutu değiştiğinde animasyonları yenile
 window.addEventListener("resize", function () {
   scrollers.forEach((scroller) => {
     const scrollerInner = scroller.querySelector(".scroller_inner");
@@ -72,18 +98,43 @@ window.addEventListener("resize", function () {
   });
 });
 
+// Tooltip işlevselliği
 document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".app-scroller-item");
   const tooltip = document.getElementById("skillTooltip");
+
+  // Başlangıçta tema filtrelerini uygula
+  updateImageFilter();
 
   items.forEach((item) => {
     item.addEventListener("mouseenter", function (e) {
       const title = this.getAttribute("data-tooltip");
       const description = this.getAttribute("data-description");
       const skillLevel = this.getAttribute("data-skill-level");
-      const iconSrc = this.querySelector("img").src;
 
-      tooltip.querySelector(".tooltip-icon").src = iconSrc;
+      // Önce ID'si "frmer" olan elementi bul
+      let iconElement = this.querySelector("#frmer");
+
+      // Eğer bulunamazsa, herhangi bir img elementini kullan
+      if (!iconElement) {
+        iconElement = this.querySelector("img");
+      }
+
+      const iconSrc = iconElement ? iconElement.src : "";
+
+      // Tooltip içindeki ikonu güncelle
+      const tooltipIcon = tooltip.querySelector(".tooltip-icon");
+      tooltipIcon.src = iconSrc;
+
+      // Eğer bu bir frmer ikonuysa, filtre stilini kopyala
+      if (iconElement && iconElement.id === "frmer") {
+        tooltipIcon.style.filter = window.getComputedStyle(iconElement).filter;
+        tooltipIcon.style.transition = "filter 0.3s ease-in-out";
+      } else {
+        tooltipIcon.style.filter = "";
+        tooltipIcon.style.transition = "";
+      }
+
       tooltip.querySelector(".tooltip-title").textContent = title;
       tooltip.querySelector(".tooltip-description").textContent = description;
       tooltip.querySelector(".skill-level").textContent = `${skillLevel}%`;

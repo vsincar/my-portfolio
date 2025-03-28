@@ -2,13 +2,15 @@
   //--//-->   skills
   ======================================*/
 :root[data-theme="dark"] {
-  --skill-tooltip-background-color: rgba(0, 0, 0, 0.9);
+  --skill-tooltip-background-color: rgba(0, 0, 0, 0.5);
+  --skill-tooltip-blur: blur(10px);
   --skill-tooltip-text-color: #fff;
   --image-filter: invert(1) brightness(2); /* Dark modda beyaza dönüşecek */
 }
 
 :root[data-theme="light"] {
-  --skill-tooltip-background-color: rgb(255, 255, 255, 0.9);
+  --skill-tooltip-background-color: rgb(255, 255, 255, 0.5);
+  --skill-tooltip-blur: blur(10px);
   --skill-tooltip-text-color: #000;
   --image-filter: invert(0); /* Light modda siyah kalacak */
 }
@@ -19,6 +21,8 @@
   position: fixed;
   display: none;
   background-color: var(--skill-tooltip-background-color);
+  backdrop-filter: var(--skill-tooltip-blur);
+  -webkit-backdrop-filter: var(--skill-tooltip-blur);
   color: var(--skill-tooltip-text-color);
   padding: 10px;
   border-radius: 5px;
@@ -38,7 +42,6 @@
 }
 
 .tooltip-icon {
-  background-color: #fff;
   border-radius: 10px;
   width: 36px;
   height: 36px;
