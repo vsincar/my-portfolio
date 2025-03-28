@@ -759,6 +759,7 @@ footer .credits a {
 
 /*If you have some default attributes you can add to :root{}*/
 #theme-switcher {
+  margin-top: 0.4rem;
   background-color: var(--switch-bg);
   border-radius: 37.5px; /* 50px * 0.75 */
   display: flex;
