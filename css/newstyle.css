@@ -37,7 +37,7 @@
   --skill-mf-progress-bg: #cdcfd1;
   --intro-bg: white;
 
-  --enlarged-bg: rgba(255, 255, 255, 0.5);
+  --nextprev-bg: rgba(0, 0, 0, 0.5);
 
   --box-shadow-card-blog: rgba(0, 0, 0, 0.1);
   --box-shadow-full-first: rgba(0, 0, 0, 0.06);
@@ -92,7 +92,8 @@
   --skill-mf-progress-bg: #616263;
   --intro-bg: rgba(0, 0, 0, 1);
 
-  --enlarged-bg: rgba(0, 0, 0, 0.5);
+  --nextprev-bg: rgba(201, 200, 200, 0.5);
+  
 
   --box-shadow-card-blog: rgba(0, 0, 0, 0.1);
   --box-shadow-full-first: rgba(0, 0, 0, 0.06);

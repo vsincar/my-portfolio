@@ -37,6 +37,7 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  gap: 8px;
 }
 
 .gallery-dot {
@@ -44,13 +45,13 @@
   height: 12px;
   border-radius: 50%;
   background: #ccc;
-  margin: 0 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .gallery-dot.active {
-  background: var(--sub-text-color);
+  background: var(--navbar-reduced-bg);
+  transform: scale(1.2);
 }
 
 /* Portfolio Card Styling */
@@ -203,6 +204,46 @@
   border: 2px solid var(--sub-text-color);
   color: var(--black-color);
 }
+
+/* Navigation Arrows */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--nextprev-bg);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  border: none;
+}
+.gallery-nav:focus {
+  border: none;
+  outline: none;
+}
+.gallery-nav:hover {
+  background-color: var(--navbar-reduced-bg);
+  color: var(--bg-color);
+}
+
+.gallery-nav.prev {
+  left: 5px;
+}
+
+.gallery-nav.next {
+  right: 5px;
+}
+
+.gallery-nav i {
+  font-size: 1.5rem;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 992px) {
   .portfolio-gallery-item {
@@ -220,39 +261,8 @@
     flex: 0 0 calc(100% - 2rem);
     min-width: calc(100% - 2rem);
   }
-}
-/* Navigation Arrows (Desktop only) */
-@media (min-width: 768px) {
+
   .gallery-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-  }
-
-  .gallery-nav:hover {
-    background: rgba(0, 0, 0, 0.8);
-  }
-
-  .gallery-nav.prev {
-    left: 15px;
-  }
-
-  .gallery-nav.next {
-    right: 15px;
-  }
-
-  .gallery-nav i {
-    font-size: 1.5rem;
+    display: none;
   }
 }

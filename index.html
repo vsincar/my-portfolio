@@ -101,7 +101,7 @@
   </nav>
   <!--/ Nav End /-->
 
-  <!--/ Intro Skew Star /-->
+  <!--/ Intro start /-->
   <div id="home" class="intro route bg-image">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
@@ -121,7 +121,7 @@
       </div>
     </div>
   </div>
-  <!--/ Intro Skew End /-->
+  <!--/ Intro End /-->
 
   <!-- About Section-->
   <section id="about" class="about-section">
@@ -502,15 +502,14 @@
     </div>
   </section>
 
-
-
+  <!-- Portfolio section -->
   <section id="work" class="portfolio-mf sect-pt4 route">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="title-box text-center">
             <h3 class="title-a">Portfolio</h3>
-            <p class="subtitle-a">
+            <p class="text-center">
               I am constantly improving myself in creating responsive and dynamic websites.
             </p>
             <div class="line-mf"></div>
@@ -520,6 +519,9 @@
 
       <!-- Portfolio Gallery Container -->
       <div class="portfolio-gallery-container">
+        <button class="gallery-nav prev" aria-label="Previous projects">
+          <i class="bi bi-chevron-left"></i>
+        </button>
         <div class="portfolio-gallery">
           <!-- PeakBuy E-commerce website -->
           <div class="portfolio-gallery-item">
@@ -649,6 +651,9 @@
             </div>
           </div>
         </div>
+        <button class="gallery-nav next" aria-label="Next projects">
+          <i class="bi bi-chevron-right"></i>
+        </button>
       </div>
 
       <!-- Navigation Dots -->
@@ -661,28 +666,49 @@
       </div>
     </div>
   </section>
-
-
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const gallery = document.querySelector('.portfolio-gallery');
       const galleryItems = document.querySelectorAll('.portfolio-gallery-item');
       const dotsContainer = document.querySelector('.gallery-dots');
+      const prevBtn = document.querySelector('.gallery-nav.prev');
+      const nextBtn = document.querySelector('.gallery-nav.next');
+
       let currentIndex = 0;
       let isDragging = false;
       let startPos = 0;
       let currentTranslate = 0;
       let prevTranslate = 0;
       let animationID;
+      let autoSlideInterval;
+      let itemsPerPage = 3; // Default for desktop
+      let totalPages = Math.ceil(galleryItems.length / itemsPerPage);
 
-      // Create navigation dots
-      galleryItems.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('gallery-dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToItem(index));
-        dotsContainer.appendChild(dot);
-      });
+      // Set initial items per page based on screen size
+      function setItemsPerPage() {
+        if (window.innerWidth <= 768) {
+          itemsPerPage = 1; // Mobile
+        } else if (window.innerWidth <= 992) {
+          itemsPerPage = 2; // Tablet
+        } else {
+          itemsPerPage = 3; // Desktop
+        }
+        totalPages = Math.ceil(galleryItems.length / itemsPerPage);
+        createDots();
+        goToItem(0);
+      }
+
+      // Create navigation dots based on current items per page
+      function createDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalPages; i++) {
+          const dot = document.createElement('div');
+          dot.classList.add('gallery-dot');
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToItem(i));
+          dotsContainer.appendChild(dot);
+        }
+      }
 
       // Touch events for mobile
       gallery.addEventListener('touchstart', touchStart);
@@ -695,11 +721,30 @@
       gallery.addEventListener('mouseleave', touchEnd);
       gallery.addEventListener('mousemove', touchMove);
 
+      // Navigation buttons
+      prevBtn.addEventListener('click', () => goToItem(currentIndex - 1));
+      nextBtn.addEventListener('click', () => goToItem(currentIndex + 1));
+
+      // Auto slide every 10 seconds
+      function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideInterval = setInterval(() => {
+          goToItem(currentIndex + 1);
+        }, 10000);
+      }
+
+      function stopAutoSlide() {
+        if (autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+        }
+      }
+
       function touchStart(e) {
         isDragging = true;
         startPos = getPositionX(e);
         animationID = requestAnimationFrame(animation);
         gallery.style.cursor = 'grabbing';
+        stopAutoSlide();
       }
 
       function touchEnd() {
@@ -707,7 +752,7 @@
         cancelAnimationFrame(animationID);
 
         const movedBy = currentTranslate - prevTranslate;
-        if (movedBy < -100 && currentIndex < galleryItems.length - 1) {
+        if (movedBy < -100 && currentIndex < totalPages - 1) {
           currentIndex += 1;
         }
 
@@ -717,6 +762,7 @@
 
         setPositionByIndex();
         gallery.style.cursor = 'grab';
+        startAutoSlide();
       }
 
       function touchMove(e) {
@@ -741,7 +787,7 @@
 
       function setPositionByIndex() {
         const itemWidth = galleryItems[0].clientWidth + 32; // + margin
-        currentTranslate = -(currentIndex * itemWidth);
+        currentTranslate = -(currentIndex * itemsPerPage * itemWidth);
         prevTranslate = currentTranslate;
         setGalleryPosition();
 
@@ -752,16 +798,27 @@
       }
 
       function goToItem(index) {
+        // Handle wrap-around
+        if (index >= totalPages) {
+          index = 0;
+        } else if (index < 0) {
+          index = totalPages - 1;
+        }
+
         currentIndex = index;
         setPositionByIndex();
       }
 
       // Initialize
-      setPositionByIndex();
+      setItemsPerPage();
+      startAutoSlide();
+
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        setItemsPerPage();
+      });
     });
   </script>
-
-
   <!-- Certificates section -->
   <section id="certificates" class="certificates-section sect-mt4 route">
     <div class="container">
