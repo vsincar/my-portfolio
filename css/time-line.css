@@ -19,18 +19,25 @@
 /* Open to work card */
 .experience.active .content {
   position: relative;
-  border-bottom: 2px solid transparent;
+  box-shadow: 0 2px 5px var(--box-shadow-card-blog);
+}
+#currentStatus {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-top: 5px;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 50%;
   animation: neonBorderGlow 2s ease-in-out infinite;
 }
-
 @keyframes neonBorderGlow {
   0%,
   100% {
-    border-bottom-color: rgba(0, 230, 118, 0); /* Tamamen şeffaf */
+    background-color: rgba(0, 230, 118, 0.1); /* Tamamen şeffaf */
     box-shadow: 0 0 0px rgba(0, 230, 118, 0); /* Gölge yok */
   }
   50% {
-    border-bottom-color: #00e676; /* Tam opak */
+    background-color: #00e676; /* Tam opak */
     box-shadow: 0 0 5px #00e676, 0 0 20px #00e676; /* Maksimum parlaklık */
   }
 }
