@@ -154,8 +154,8 @@ img#frmer {
 }
 .scroller-item:hover .scroller-icon {
   transition: all 500ms ease;
-  color: var(--item-icon);
-  fill: var(--item-icon);
+  color: var(--item-icon-hover);
+  background-color: var(--black-color);
   box-shadow: 0 0 0 10px var(--bg-color);
 }
 
