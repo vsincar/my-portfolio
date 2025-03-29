@@ -1,43 +1,37 @@
-/* Counter Stilleri */
+/* Counter Styles */
 .counter-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(20px, 2.5vw, 30px); /* Boşluk küçülme oranı azaltıldı */
+  gap: 20px;
   max-width: 100%;
-  padding: 0 clamp(12px, 2vw, 15px);
+  padding: 0 15px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 .counter-box {
-  flex: 0 0 auto;
-  min-width: clamp(80px, 12vw, 110px); /* Küçülme oranı azaltıldı */
-  height: clamp(55px, 8vw, 65px); /* Yükseklik küçülme oranı azaltıldı */
+  min-width: 100px;
+  height: 65px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .number {
-  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Küçülme daha yumuşak */
+  font-size: 2.2rem;
   font-weight: 600;
   color: var(--counter-label-color);
   line-height: 1;
 }
 
 .label {
-  font-size: clamp(0.8rem, 2vw, 1rem); /* Daha dengeli küçülme */
+  font-size: 1rem;
   color: var(--counter-label-color);
-  margin-top: clamp(4px, 0.8vw, 6px);
+  margin-top: 6px;
   font-weight: 600;
   white-space: nowrap;
 }
 
-/* Temalar (aynı kaldı) */
+/* Themes */
 :root[data-theme="dark"] {
   --counter-label-color: #fff;
   background-color: #222;
@@ -48,21 +42,74 @@
   background-color: #f8f9fa;
 }
 
-/* Ekstra küçük ekranlar için daha az agresif küçültme */
-@media (max-width: 350px) {
+/* Responsive adjustments */
+@media (max-width: 1199.98px) {
+  .counter-box {
+    min-width: 90px;
+    height: 60px;
+  }
+  .number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 991.98px) {
   .counter-wrapper {
     gap: 15px;
   }
-
   .counter-box {
-    min-width: 75px;
+    min-width: 85px;
+    height: 55px;
   }
-
   .number {
-    font-size: 1.6rem; /* Önceki 1.3rem yerine 1.6rem */
+    font-size: 1.8rem;
   }
-
   .label {
-    font-size: 0.75rem; /* Önceki 0.7rem yerine 0.75rem */
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .counter-box {
+    min-width: 80px;
+    height: 50px;
+  }
+  .number {
+    font-size: 1.6rem;
+  }
+  .label {
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .counter-wrapper {
+    gap: 10px;
+  }
+  .counter-box {
+    min-width: 70px;
+    height: 45px;
+  }
+  .number {
+    font-size: 1.8rem;
+  }
+  .label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .counter-wrapper {
+    gap: 4px;
+  }
+  .counter-box {
+    min-width: 65px;
+  }
+  .number {
+    font-size: 1.3rem;
+  }
+  .label {
+    font-size: 0.75rem;
   }
 }
