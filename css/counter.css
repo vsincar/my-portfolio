@@ -1,26 +1,20 @@
-/* Genel Sıfırlamalar */
-
-:root[data-theme="dark"] {
-  --counter-label-color: #fff;
-}
-:root[data-theme="light"] {
-  --counter-label-color: #3b3945;
-}
-
-/* Sayaç Kutularını İçeren Wrapper */
+/* Counter Stilleri */
 .counter-wrapper {
   display: flex;
-  justify-content: center; /* Kutuları yatayda ortala */
-  align-items: center; /* Dikey hizalama */
-
-  gap: 100px; /* Varsayılan boşluk */
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(20px, 2.5vw, 30px); /* Boşluk küçülme oranı azaltıldı */
+  max-width: 100%;
+  padding: 0 clamp(12px, 2vw, 15px);
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* Bireysel Sayaç Kutuları */
 .counter-box {
-  flex: 0 0 120px; /* Kutuların genişliğini sabit tut */
-  height: 60px;
+  flex: 0 0 auto;
+  min-width: clamp(80px, 12vw, 110px); /* Küçülme oranı azaltıldı */
+  height: clamp(55px, 8vw, 65px); /* Yükseklik küçülme oranı azaltıldı */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,31 +22,47 @@
   text-align: center;
 }
 
-/* Rakamların Stili */
 .number {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Küçülme daha yumuşak */
   font-weight: 600;
   color: var(--counter-label-color);
+  line-height: 1;
 }
 
-/* Açıklama Yazıları */
 .label {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 2vw, 1rem); /* Daha dengeli küçülme */
   color: var(--counter-label-color);
-  margin-top: 5px;
+  margin-top: clamp(4px, 0.8vw, 6px);
   font-weight: 600;
+  white-space: nowrap;
 }
 
-/* Tablet (768px ve altı) */
-@media (max-width: 768px) {
+/* Temalar (aynı kaldı) */
+:root[data-theme="dark"] {
+  --counter-label-color: #fff;
+  background-color: #222;
+}
+
+:root[data-theme="light"] {
+  --counter-label-color: #3b3945;
+  background-color: #f8f9fa;
+}
+
+/* Ekstra küçük ekranlar için daha az agresif küçültme */
+@media (max-width: 350px) {
   .counter-wrapper {
-    gap: 50px; /* Boşluk azaltıldı */
+    gap: 15px;
   }
-}
 
-/* Mobil (480px ve altı) */
-@media (max-width: 480px) {
-  .counter-wrapper {
-    gap: 20px; /* Daha iyi görünmesi için 20px yapıldı */
+  .counter-box {
+    min-width: 75px;
+  }
+
+  .number {
+    font-size: 1.6rem; /* Önceki 1.3rem yerine 1.6rem */
+  }
+
+  .label {
+    font-size: 0.75rem; /* Önceki 0.7rem yerine 0.75rem */
   }
 }

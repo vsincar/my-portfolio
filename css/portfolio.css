@@ -261,6 +261,22 @@
     flex: 0 0 calc(100% - 2rem);
     min-width: calc(100% - 2rem);
   }
+  @media (max-width: 480px) {
+    .portfolio-gallery-item {
+      flex: 0 0 calc(85% - 1rem);
+      min-width: calc(85% - 1rem);
+      margin: 0 0.5rem;
+    }
+
+    .portfolio-info {
+      padding: 1rem;
+    }
+
+    .portfolio-card img,
+    .portfolio-card iframe {
+      height: 160px;
+    }
+  }
 
   .gallery-nav {
     display: none;
