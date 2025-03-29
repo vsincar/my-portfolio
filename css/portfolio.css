@@ -19,12 +19,7 @@
   display: flex;
   transition: transform 0.5s ease;
   padding: 10px 0;
-  cursor: grab;
   will-change: transform;
-}
-
-.portfolio-gallery:active {
-  cursor: grabbing;
 }
 
 .portfolio-gallery-item {
@@ -80,144 +75,54 @@
   border: none;
   display: block;
 }
+
+/* Revised Portfolio Card Bottom Layout */
 .portfolio-card-bottom {
-  position: relative;
-  min-height: 120px;
   display: flex;
   flex-direction: column;
-}
-.portfolio-info {
+  justify-content: space-between;
+  flex-grow: 1;
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 0.5rem;
-  overflow: hidden;
+}
+
+.portfolio-info {
   width: 100%;
-  position: fixed;
-  z-index: 10;
-  top: 190px;
+  margin-bottom: 1rem;
 }
 
 .portfolio-info h4 {
   font-size: 1.1rem;
-  margin: 0;
+  margin: 0 0 0.5rem 0;
   padding: 0;
-  line-height: 1.2;
+  line-height: 1.3;
   text-align: left;
-  align-self: flex-start; /* SOLA YASLA */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  /* Aşağıdaki 2 satır önemli: */
-  width: 100%;
-  max-height: 3em; /* 2 satırlık alan */
 }
 
 .portfolio-info p {
   font-size: 0.9rem;
   margin: 0;
   padding: 0;
-  line-height: 1.2;
+  line-height: 1.4;
   text-align: left;
-  align-self: flex-start; /* SOLA YASLA */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  /* Aşağıdaki 2 satır önemli: */
-  width: 100%;
-  max-height: 3em; /* 2 satırlık alan */
 }
 
 .portfolio-links {
   display: flex;
-  position: fixed;
-  bottom: -10px;
-  margin-top: auto;
-  padding-top: 0.5rem;
-  padding: 15px;
-  width: 100%;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 1rem;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .portfolio-info {
-    padding: 1.2rem;
-    min-height: 140px;
-  }
-
-  .portfolio-info h4 {
-    font-size: 1.1rem;
-    -webkit-line-clamp: 2;
-  }
-
-  .portfolio-info p {
-    font-size: 0.85rem;
-    -webkit-line-clamp: 2;
-  }
-}
-
-@media (max-width: 768px) {
-  .portfolio-info {
-    padding: 1rem;
-    min-height: 130px;
-  }
-
-  .portfolio-info h4 {
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .portfolio-info p {
-    font-size: 0.8rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .portfolio-links a {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .portfolio-card-bottom {
-    position: relative;
-    min-height: 80px;
-    display: flex;
-    flex-direction: column;
-  }
-  .portfolio-info {
-    padding: 0.8rem;
-    top: 145px;
-  }
-
-  .portfolio-info h4 {
-    font-size: 0.95rem;
-    -webkit-line-clamp: 2;
-    margin-bottom: 0.3rem;
-  }
-
-  .portfolio-info p {
-    font-size: 0.75rem;
-    -webkit-line-clamp: 2;
-    margin-bottom: 0.6rem;
-  }
-
-  .portfolio-links {
-    padding-top: 0.4rem;
-  }
-
-  .portfolio-links a {
-    font-size: 1rem;
-  }
-
-  .portfolio-date {
-    font-size: 0.7rem;
-  }
-}
 .portfolio-links a {
   color: var(--primary-color);
   font-size: 1.25rem;
@@ -228,12 +133,13 @@
 }
 
 .portfolio-links a:hover {
-  color: var(--navbar-reduced-bg);
+  color: red;
 }
 
 .portfolio-date {
   font-size: 0.8rem;
   color: var(--muted-text);
+  margin-top: 0.5rem;
 }
 
 /* Slideshow Styling */
@@ -332,6 +238,18 @@
   #work {
     margin-top: 8rem;
   }
+
+  .portfolio-card-bottom {
+    padding: 1.2rem;
+  }
+
+  .portfolio-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .portfolio-info p {
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -343,6 +261,23 @@
   .gallery-nav {
     display: none;
   }
+
+  .portfolio-card-bottom {
+    padding: 1rem;
+  }
+
+  .portfolio-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .portfolio-info p {
+    font-size: 0.8rem;
+  }
+
+  .portfolio-links a {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -351,6 +286,7 @@
     min-width: calc(95%);
     margin: 0 0.5rem;
   }
+
   .portfolio-card img,
   .portfolio-card iframe {
     height: 150px;
@@ -358,5 +294,30 @@
 
   #work {
     margin-top: 6rem;
+  }
+
+  .portfolio-card-bottom {
+    padding: 0.8rem;
+  }
+
+  .portfolio-info h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .portfolio-info p {
+    font-size: 0.75rem;
+  }
+
+  .portfolio-links {
+    padding-top: 0.4rem;
+  }
+
+  .portfolio-links a {
+    font-size: 1rem;
+  }
+
+  .portfolio-date {
+    font-size: 0.7rem;
   }
 }
