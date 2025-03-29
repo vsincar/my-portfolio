@@ -754,13 +754,13 @@ footer .credits a {
 .btn-lg {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
   border-radius: 0.3rem;
 }
 
 /*If you have some default attributes you can add to :root{}*/
 #theme-switcher {
-  margin-top: 0.4rem;
+  margin-top: 0.3rem;
   background-color: var(--switch-bg);
   border-radius: 37.5px; /* 50px * 0.75 */
   display: flex;
