@@ -705,7 +705,9 @@ footer .credits {
 footer .credits a {
   color: var(--white-bg);
 }
-
+p#designer{
+  color:#fff;
+}
 /*======================================
   //--//-->   BUTTON
   ======================================*/
