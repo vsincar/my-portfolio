@@ -109,8 +109,8 @@
 }
 
 .modal-content {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 70vw;
+  max-height: 70vh;
   width: auto;
   height: auto;
   border-radius: 5px;
