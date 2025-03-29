@@ -900,8 +900,10 @@
 
     <!-- Modal for enlarged image -->
     <div class="cert-modal" id="certModal">
-      <span class="close-modal">&times;</span>
-      <img class="modal-content" id="modalImage">
+      <div class="modal-content-container">
+        <span class="close-modal">&times;</span>
+        <img id="modalImage" class="modal-content" src="" alt="">
+      </div>
     </div>
     <script>
       // Image modal functionality
@@ -909,6 +911,7 @@
         // Get all certificate images and their containers
         const certImages = document.querySelectorAll('.cert_img');
         const modal = document.getElementById('certModal');
+        const modalContainer = document.querySelector('.modal-content-container');
         const modalImg = document.getElementById('modalImage');
         const closeModal = document.querySelector('.close-modal');
 
@@ -920,17 +923,28 @@
             e.stopPropagation();
             modal.style.display = 'flex';
             modalImg.src = img.src;
+
+            // Optional: Add alt text to modal image if needed
+            modalImg.alt = img.alt || 'Certificate Image';
           });
         });
 
         // Close modal when clicking the X
-        closeModal.addEventListener('click', function () {
+        closeModal.addEventListener('click', function (e) {
+          e.stopPropagation(); // Prevent event from bubbling to modal
           modal.style.display = 'none';
         });
 
         // Close modal when clicking outside the image
         modal.addEventListener('click', function (e) {
           if (e.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+
+        // Optional: Close modal with ESC key
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal.style.display === 'flex') {
             modal.style.display = 'none';
           }
         });
