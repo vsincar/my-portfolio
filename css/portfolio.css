@@ -80,41 +80,144 @@
   border: none;
   display: block;
 }
-
-/* Portfolio Info - Yeniden Düzenlenmiş Kısım */
+.portfolio-card-bottom {
+  position: relative;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+}
 .portfolio-info {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 190px;
 }
 
 .portfolio-info h4 {
-  margin: 0 0 1rem 0; /* Sadece alt margin */
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-color);
-  line-height: 1.3;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  text-align: left;
+  align-self: flex-start; /* SOLA YASLA */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* Aşağıdaki 2 satır önemli: */
+  width: 100%;
+  max-height: 3em; /* 2 satırlık alan */
 }
 
 .portfolio-info p {
-  margin: 0 0 auto 0; /* Üst margin ve alt margin auto ile esneklik */
   font-size: 0.9rem;
-  color: var(--muted-text);
-  line-height: 1.5;
-  flex-grow: 1; /* Açıklamanın mevcut alanı kaplamasını sağlar */
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  text-align: left;
+  align-self: flex-start; /* SOLA YASLA */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* Aşağıdaki 2 satır önemli: */
+  width: 100%;
+  max-height: 3em; /* 2 satırlık alan */
 }
 
 .portfolio-links {
   display: flex;
+  position: fixed;
+  bottom: -10px;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  padding: 15px;
+  width: 100%;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem; /* Üstteki elementten sabit boşluk */
-  padding-top: 0.5rem; /* İç boşluk */
-  border-top: 1px solid rgba(0, 0, 0, 0.1); /* İsteğe bağlı ayırıcı çizgi */
 }
 
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .portfolio-info {
+    padding: 1.2rem;
+    min-height: 140px;
+  }
+
+  .portfolio-info h4 {
+    font-size: 1.1rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .portfolio-info p {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-info {
+    padding: 1rem;
+    min-height: 130px;
+  }
+
+  .portfolio-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .portfolio-info p {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .portfolio-links a {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-card-bottom {
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+  }
+  .portfolio-info {
+    padding: 0.8rem;
+    top: 145px;
+  }
+
+  .portfolio-info h4 {
+    font-size: 0.95rem;
+    -webkit-line-clamp: 2;
+    margin-bottom: 0.3rem;
+  }
+
+  .portfolio-info p {
+    font-size: 0.75rem;
+    -webkit-line-clamp: 2;
+    margin-bottom: 0.6rem;
+  }
+
+  .portfolio-links {
+    padding-top: 0.4rem;
+  }
+
+  .portfolio-links a {
+    font-size: 1rem;
+  }
+
+  .portfolio-date {
+    font-size: 0.7rem;
+  }
+}
 .portfolio-links a {
   color: var(--primary-color);
   font-size: 1.25rem;
@@ -244,33 +347,10 @@
 
 @media (max-width: 480px) {
   .portfolio-gallery-item {
-    flex: 0 0 calc(100%);
-    min-width: calc(100%);
+    flex: 0 0 calc(95%);
+    min-width: calc(95%);
     margin: 0 0.5rem;
   }
-
-  .portfolio-info {
-    padding: 1rem;
-  }
-
-  .portfolio-info h4 {
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
-  }
-
-  .portfolio-info p {
-    font-size: 0.85rem;
-  }
-
-  .portfolio-links {
-    margin-top: 1rem;
-    padding-top: 0.75rem;
-  }
-
-  .portfolio-links a {
-    font-size: 1.1rem;
-  }
-
   .portfolio-card img,
   .portfolio-card iframe {
     height: 150px;
