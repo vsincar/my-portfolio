@@ -76,6 +76,7 @@
   color: var(--muted-text);
   font-size: 0.8rem;
   font-weight: normal;
+  order: 1; /* Tarih sola gelsin */
 }
 
 .exp-location {
@@ -158,7 +159,9 @@
   .experience:first-child::after {
     top: 55px;
   }
-
+  .exp-h4 {
+    order: 0;
+  }
   .experience::after {
     content: "";
     position: absolute;
